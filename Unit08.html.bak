@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+
+//计算距离今天的天数
+
+	/*var now=new Date();
+	var birth=new Date("1993/01/07");
+	var mils=now-birth;
+	var days=Math.floor(mils/1000/60/60/24);
+	console.log("亲爱的臭老公活了： "+days+"天");
+	var age=Math.ceil(days/365);
+	console.log("年龄："+age);*/
+
+//计算合同到期时间
+
+	/*var hiredate=new Date("2012/06/30");
+	var enddate=new Date(hiredate.getTime());
+	enddate.setFullYear(enddate.getFullYear()+3);
+	var resdate=new Date(enddate.getTime());
+	resdate.setMonth(resdate.getMonth()-1);
+	if(resdate.getDay()==6){
+		resdate.setDate(resdate.getDate()-1);
+	}
+	if(resdate.getDay()==0){
+		resdate.setDate(resdate.getDate()-2);
+	}
+	var alertdate=new Date(resdate.getTime());
+	alertdate.setDate(alertdate.getDate()-7);
+	console.log("合同到期时间"+enddate.toLocaleDateString());
+	console.log("合同续签时间"+resdate.toLocaleDateString());
+	console.log("合同提醒时间"+alertdate.toLocaleDateString());*/
+
+//自定义format函数，格式化日期
+
+	/*function format(date){
+		var result=[];
+		var week=['日','一','二','三','四','五','六'];
+		result[0]=date.getFullYear();
+		result[1]=date.getMonth()+1;
+		result[1]<10 && (result[1]="0"+result[1]);
+		result[2]=date.getDate();
+		result[2]<10  && (result[2]="0"+result[2]);
+		result[3]=week[date.getDay()];
+		var hours=date.getHours();
+		result[4]=hours<12?"上午":"下午";  
+		hours>12 && (hours-=12);
+		hours<10 && (hours="0"+hours);
+		result[5]=hours;
+		result[6]=date.getMinutes();
+		result[6]<10 && (result[6]="0"+result[6]);
+		result[7]=date.getSeconds();
+		result[7]<10 && (result[7]="0"+result[7]);
+		result=result.join("");
+		var reg=/(\d{4})(\d{2})(\d{2})([\u4e00-\u9fa5])([\u4e00-\u9fa5][\u4e00-\u9fa5])(\d{2})(\d{2})(\d{2})/;
+        return result.replace(reg,"$1年$2月$3日 星期$4 $5$6:$7:$8"); 
+	}
+    console.log(format(new Date()));*/
+
+//笔试题finally
+
+	/*var n;
+	function fun(){ //try出错finally没return   try出错finally有return   try没错finally没return   try没错finally有return
+		try{		
+			n=1;
+			console.log(m);
+			return n;
+		}catch(err){
+			n=2;
+			return n;
+		}finally{
+			n=3;
+			return n;//finally中的return会替换前边的所有return
+		}
+	}
+	console.log(fun());
+	console.log(n);*/
+
+//抛出自定义错误
+
+	/*//程序员A:定义函数
+	function round(num,d){
+		if(!isNaN(d)){
+			num*=Math.pow(10,d);
+			num=Math.round(num.toFixed(2));
+			num/=Math.pow(10,d);
+			return num;
+		}else {
+			throw new Error("第二个参数必须是数字");
+		}
+	}
+	//程序员B:调用函数
+	function fun(){
+		var num=prompt("输入四舍五入的值：");
+		var d=prompt("输入位数：");
+		try{
+			alert(round(num,d));
+		}catch(err){
+			alert("位数必须为数字");
+			console.log(err.message);
+		}
+	}
+	console.log(fun());*/
+
+	
+
+
+
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

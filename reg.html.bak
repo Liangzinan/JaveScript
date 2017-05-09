@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+  
+ //替换所有敏感词
+
+		/*var str="纪负责全国党员干部的纪监察工作";
+		var reg=/纪[检委](监察)?/;
+		var kwords=null;
+		while((kwords=str.match(reg))!=null){
+		    str=str.replace(reg,kwords[0].length==2?"**":"****")
+		}
+		console.log(str);*/
+
+//查找所有的敏感词
+
+		/*var str="纪检负责全国党员纪委干部的纪检监察工作";
+		var reg=/纪[检委](监察)?/g;
+		var kwords=str.match(reg);
+		console.log(kwords.join("\n"));*/
+
+//查找所有敏感词以及位置
+
+		/*var str="纪检负责全国党员纪委干部的纪检监察工作";
+		var reg=/纪[检委](监察)?/g;
+		var arr=null;
+		while((arr=reg.exec(str))!=null){
+			console.log(arr[0]+"  "+arr[1]+arr.index+arr.length+reg.lastIndex);
+		}*/
+
+//获取html中所有a元素中href属性中的url
+
+		/*var html="<link rel='stylesheet' href='css/index.css'>  <a href='http://tmooc.cn'></a>  <a name='op' href='http://tmooc.cn'></a>";
+		var reg=/<a\s+(.*?)href=['"]([^'"]*)['"]/ig;
+		var urls=[];
+		var arr=[];
+		while((arr=reg.exec(html))!=null){
+			urls.push(RegExp.$2); //将本次查找结果中第2个圆括号中的子内容压入urls中
+		}
+		console.log(urls.join("\n"));*/
+
+//使用正则表达式切割
+
+		/*var html="<li>smith</li><br><li>s</li><li class='we'>b</li>";
+		var reg=/<\/li>.*?<li.*?>/;
+		html=html.trim().slice(4,-5);
+		var names=html.split(reg);
+		console.log(names);*/
+
+//双色球机选程序
+
+		/*function doubleBall(){
+		    var reds=[parseInt(Math.random()*33+1)];
+			while(reds.length<6){
+				var r=parseInt(Math.random()*33+1);
+				for(var i=0;i<reds.length;i++){
+					if(reds[i]==r){
+						break;
+					}
+					else if(i==reds.length-1){
+						reds.push(r);
+					}
+				}
+			}
+			function compare(a,b){return a-b};
+			reds.sort(compare);
+			var blue=parseInt(Math.random()*16+1);
+			return reds.join(",")+" "+blue;
+		}
+		console.log(doubleBall());*/
+
+//随机生成验证码
+
+		/*var chars=[];
+		for(c=48;c<=57;c++){
+			chars.push(String.fromCharCode(c));
+		}
+		for(A=65;A<=90;A++){
+			chars.push(String.fromCharCode(A));
+		}
+		for(a=97;a<=122;a++){
+			chars.push(String.fromCharCode(a));
+		}
+		function getCode(){
+			var code=[];
+			while(code.length<4){
+				var i=parseInt(Math.random()*62);
+				code.push(chars[i]);
+			}
+			return code.join("");
+		}
+		console.log(getCode());
+
+//输入验证码
+
+		var code=getCode();
+		while((prompt("请输入验证码："+code).toUpperCase())!=code.toUpperCase()){
+			alert("验证码输入错误！");
+			code=getCode();
+		}
+		alert("验证通过");*/
+
+		var str="jheih\mjij";
+		console.log(str.length);
+     
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

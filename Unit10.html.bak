@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+
+//构造函数
+
+	/*function Student(sname,age){
+		this.sname=sname; //这里的this指新创建的空对象
+		this.age=age;
+		this.intrSelf=function(){
+			alert("d"+this.sname+"t"+this.age); //这里的this指调用方法的对象即：li
+		}
+	}
+	var li=new Student("ll",12);
+	console.log(li.sname);
+	li.intrSelf();*/
+
+//使用构造函数的原型对象
+
+	/*function Student(sname,age){
+		this.sname=sname; //这里的this指新创建的空对象
+		this.age=age;
+	}
+	//构造函数的原型对象添加intrSelf函数
+	Student.prototype.intrSelf=function(){  
+			return "d"+this.sname+"t"+this.age; //这里的this指调用方法的对象即：li
+		}
+	var li=new Student("ll",12);
+	console.log("intrSelf" in li);//判断li能不能用intrSelf
+	console.log(li.sname);
+	console.log(li.intrSelf());*/
+
+//使用toString重写方法
+
+	/*function Student(sname,age){
+		this.sname=sname; //这里的this指新创建的空对象
+		this.age=age;
+	}
+	Student.prototype.toString=function(){  //改为重写方法：intrSelf-->toString
+			return "d"+this.sname+"t"+this.age; //这里的this指调用方法的对象即：li
+		}
+	var li=new Student("ll",12);
+	console.log("intrSelf" in li);//判断li能不能用intrSelf
+	console.log(li.sname);
+	document.write(li);*/
+
+//克隆对象
+
+	/*Object.prototype.clone=function(){
+		var newObj;
+		if(!(this instanceof Number) && !(this instanceof String) && !(this instanceof Boolean)){
+			newObj=new this.constructor;
+		}else{
+			newObj=new this.constructor(this.valueOf());
+		}
+		for(var prop in this){
+			if(this.hasOwnProperty(prop)){
+				newObj[prop]=this[prop];
+			}
+		}
+		return newObj;
+	}
+	function Student(sname,age){
+		this.sname=sname; //这里的this指新创建的空对象
+		this.age=age;
+	}
+	Student.prototype.toString=function(){  //改为重写方法：intrSelf-->toString
+			return "d"+this.sname+"t"+this.age; //这里的this指调用方法的对象即：li
+		}
+	var li=new Student("ll",12);
+	var CloneLili=li.clone();
+	console.log(li==CloneLili);//false表示新创建了一个克隆对象
+	console.log(CloneLili);
+
+	var n="djkfj";
+	var m=n.clone();
+	console.log(m);*/
+	
+
+//笔试题
+
+	/*function foo(){
+		return this.a;
+	}
+	var a=2;
+	var o={a:3,foo:foo};
+	var p={a:4};
+	console.log(o.foo());
+	p.foo=o.foo;
+	console.log(p.foo());
+	console.log(foo());*/
+
+//兼容所有浏览器中String类型的原型对象包含trim方法
+
+	/*if(!("trim" in String.prototype)){
+		console.log("自定义trim方法")
+		String.prototype.trim=function(){
+			return this.replace(/^\s+|\s+$/g,"");
+		}
+	}
+	var str=" \t   Hello Word! \t  ";
+	document.write(str.trim());*/
+
+//判断并自定义数组对象的indexOf方法
+
+	/*if(!("indexOf" in Array.prototype)){
+		Array.prototype.indexOf=function(kword,fromi){
+			fromi===undefined && (fromi=0);	
+			for(i=fromi;i<this.length;i++){
+				if(this[i]==kword){
+					return i;
+				   }
+			}
+			return -1;	
+		}
+	}
+	var str=["no","zuo","no","die"];
+	console.log(str.indexOf("no"));
+	console.log(str.indexOf("no",1));
+	console.log(str.indexOf("no",3));
+	console.log(Object.getPrototypeOf(str));*/
+
+//判断一个对象是不是数组(5种方法)
+
+	/*var arr=[];
+	var obj={};
+	var fun=function(){};
+	if(Array.isArray(arr)){
+		console.log("dd");
+	}else {
+		console.log("ddd");
+	}*/
+    
+//
+
+	function Flyer(fname,speed){
+		this.fname=fname;
+		this.speed=speed;
+	}
+	Flyer.prototype.fly=function(){
+		console.log(this.fname+"以"+this.speed+"公里/时速飞行")
+	    }
+	var bird=new Flyer("麻雀",40);
+	bird.fly();
+
+//
+
+	function Plane(fname,speed,capacity){
+		//this.fname=fname;
+		//this.speed=speed;
+		Flyer.call(this,fname,speed);
+		this.capacity=capacity;
+	}
+	Object.setPrototypeOf(Plane.prototype,Flyer.prototype);
+	Plane.prototype.fly=function(){
+		console.log(this.fname+"搭载"+this.capacity+"名乘客，以"+this.speed+"公里/时速飞行");
+	}
+	var A380=new Plane("A380",1000,555);
+	A380.fly();
+
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

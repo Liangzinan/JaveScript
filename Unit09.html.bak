@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+
+  //重载
+
+	/*function add(){
+		for(var i=0,sum=0;i<arguments.length;i++){
+			sum+=arguments[i];
+		}
+		return sum;
+	}
+	console.log(add(1,2,3));
+	console.log(add(1,2,3,4));
+	console.log(add(1,2,3,4,5));*/
+
+//closure(闭包)
+
+	//取号机
+	function getNum(){
+		var n=0;
+		return function(){return ++n;};
+	}
+	var m=getNum();
+	for(i=1;i<5;i++){
+		console.log(m);
+	}
+
+	//转汇率程序
+
+	/*function change(rate){
+		return function(rmb){
+			return (rmb/rate).toFixed(1);
+		};
+	}
+	var to$=change(6.1);
+	console.log(to$(1000));*/
+
+	//笔试题
+
+	/*function outer(){
+		for(var i=0,arr=[];i<3;i++){
+			arr[i]=function(){return i};
+		}
+		return arr;
+	}
+	var getFuns=outer();
+	console.log(getFuns[0]());
+	console.log(getFuns[1]());
+	console.log(getFuns[2]());*/
+
+	//get/set访问器：保护变量不被随意赋值或篡改
+
+	/*var getSecret,setSecret;//等待接收访问器函数对象
+	(function(){//只有在开始时创建访问器函数
+		var secret=0;
+		getSecret=function(){return secret;};
+		setSecret=function(value){return secret=value;};
+	})();
+	console.log(getSecret());
+	setSecret(10);
+	console.log(getSecret());*/
+	
+	
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

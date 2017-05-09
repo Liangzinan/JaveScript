@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+
+  //等腰三角
+
+   /*var l=parseInt(prompt("l:"));
+    for(var r=1;r<=l;r++){
+	  for(var n=1,str="";n<=l+r-1;n++){
+	       n<=l-r?str+=" ":str+="*";
+	  }
+	  console.log(str);
+	}*/
+
+	//等腰三角使用数组的join方法
+
+    var l=parseInt(prompt("l:"));
+    for(var r=1;r<=l;r++){
+	  for(var n=1,str=[];n<=l+r-1;n++){
+	       str[str.length]=(n<=l-r)?" ":"*";
+	  }
+	  console.log(str.join(""));
+	}
+
+	//正三角
+	/*var l=parseInt(prompt("l:"));
+    for(var r=1;r<=l;r++){
+	  for(var n=1,str="";n<=r;n++){
+	       str+="*";
+	  }
+	  console.log(str);
+	}*/
+	//反三角
+	/*var l=parseInt(prompt("l:"));
+    for(var r=1;r<=l;r++){
+	  for(var n=1,str="";n<=l;n++){
+	       n<=l-r?str+=" ":str+="*";
+	  }
+	  console.log(str);
+	}*/
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+
+     //数组越界不出错
+
+     /*var week=[];
+	 week[0]="三";
+	 week[100]='日';
+	 console.log(week);*/
+
+	 //在数组后追加元素
+
+     /*var emps=[];
+	 var input="";
+     while((input=prompt("输入姓名:"))!="exit"){
+	     emps[emps.length]=input;
+	 }
+	 console.log(emps);*/
+
+	 //定义一个函数，找出数组中的最大值
+
+	 /*function getMax(arr){
+		 var max=arr[0];
+		 for(i=1;i<arr.length;i++){
+		    if(arr[i]>max){
+			     max=arr[i];
+			}
+		 }
+	     return max;
+	 }
+	 console.log(getMax([2,5,7,4,8,3,8,9,0]));*/
+
+	 //通过指定值找数组位置下标
+
+	 /*function indexOf(arr,elem){
+	    for(i=0;i<arr.length;i++){
+		    if(arr[i]==elem){return i;}
+		}
+		return -1;
+	 }
+	 var emps=["lx","wzn","zal"];
+	 console.log(indexOf(emps,prompt("输入要查找的名字：")));*/
+
+	 //升序冒泡排序
+
+	 /*function bubbleSort(arr){
+	  for(r=1;r<arr.length;r++){
+	    for(i=0;i<arr.length-r;i++){
+		   if(arr[i]-arr[i+1]>0){
+			   var n;
+			   n=arr[i];
+			   arr[i]=arr[i+1];
+			   arr[i+1]=n;
+		   }
+		}
+	  }
+	 }
+	 var arr=[4,7,4,3,6,8,2,0,5];
+	 bubbleSort(arr);
+	 console.log(arr);*/
+
+	 //降序冒泡排序
+
+	 /*function bubbleSort(arr){
+	  for(r=1;r<arr.length;r++){
+	    for(i=0;i<arr.length-r;i++){
+		   if(arr[i+1]-arr[i]>0){
+			   var n;
+			   n=arr[i];
+			   arr[i]=arr[i+1];
+			   arr[i+1]=n;
+		   }
+		}
+	  }
+	 }
+	 var arr=[4,7,4,3,6,8,2,0,5];
+	 bubbleSort(arr);
+	 console.log(arr);*/
+
+	//自定义比较
+
+	function compareASC(a,b){
+	   return a-b;
+	}
+	function compareDESC(a,b){
+	   return b-a;
+	}
+    /*function bubbleSort(arr,cp){
+		for(r=1;r<arr.length;r++){
+	    for(i=0;i<arr.length-1;i++){
+		   if(cp(arr[i],arr[i+1])>0){
+			   arr[i]+=arr[i+1];
+			   arr[i+1]=arr[i]-arr[i+1];
+			   arr[i]-=arr[i+1];
+		    }
+		  }
+		}
+	 }*/
+	 var arr=[4,7,4,3,6,18,2,0,5];
+	 //bubbleSort(arr,compareASC);
+	 arr.sort(compareDESC);
+	 console.log(arr);
+	 arr.sort();
+	 console.log(arr);
+
+     //不理解
+	 
+    /* function bubbleSort(arr){
+		for(r=1;r<arr.length;r++){
+	    for(i=0;i<arr.length-1;i++){
+		   if(arr[i]>arr[i+1]){
+			   arr[i]+=arr[i+1];
+			   arr[i+1]=arr[i]-arr[i+1];
+			   arr[i]-=arr[i+1];
+		    }
+		  }
+		}
+	 }*/
+
+     //关联数组
+
+	 /*var lx=[],wzn={"xh2":45,"xm1":"魏子楠"};
+	 lx["xm_0"]="梁旭";
+	 lx["xh_1"]=123;
+	 console.log(lx);
+	 console.log(wzn["xh2"]);
+     for(var key in wzn){
+	    console.log(key + ":" + wzn[key]);
+	 } 
+	 for(var key in lx){
+	    console.log(key + ":" + lx[key]);
+	 }*/
+
+	 //定义一个数组，去重并统计原数组中每个值出现的次数
+ 
+     var arr=[2,4,5,7,2,3,5,5,6,7,3,2,4];
+	 var hash=[];
+	 for(i=0;i<arr.length;i++){
+	    if(hash[arr[i]]===undefined){
+		   hash[arr[i]]=1;
+		}else{
+		   hash[arr[i]]++;
+		}
+	 }
+	 console.log(hash);
+	 arr=[];
+	 for(var key in hash){
+	    arr[arr.length]=(key-=0);
+	 }
+	 //依次将hash中每个key，追加到arr中
+	 for(arr[arr.length] in hash);
+	 console.log(arr);
+
+	 //字符串拼接 数组API
+
+     /*var chars=['H','e','l','l','o'];
+	 console.log(chars.join(""));*/
+
+	 /*var arr=[2,5,4,7,5,8];
+	 var arr1=[43,67];
+	 var newArr=arr.concat(arr1);
+	 console.log(newArr);
+	 console.log(arr);
+	 var subArr=arr.slice(1,4);
+	 console.log(subArr);
+	 console.log(arr);
+	 var deletes=arr.splice(1,1);
+	 console.log(deletes);
+	 console.log(arr);
+	 arr.splice(2,0,8,8);
+	 console.log(arr);
+	 var arr2=arr.splice(4,2,8,8,9,7);
+	 console.log(arr2);
+	 console.log(arr);
+	 var arr3=arr.reverse();
+	 console.log(arr3);*/
+
+
+
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>
